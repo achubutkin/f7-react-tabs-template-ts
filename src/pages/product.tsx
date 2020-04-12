@@ -7,21 +7,19 @@ export type Product = {
   description?: string,
 }
 
-type Props = {
-
-}
+type Props = {}
 
 type State = {
-  product?: Product
+  product: Product
 }
 
 export default class extends React.Component<Props, State> {
   constructor(props: Readonly<Props>) {
     super(props);
     const { $f7route } = this /* object f7route is also available in props */
-    const productId = $f7route.params.id;
-    let currentProduct: Product;
-    const { products = [] }: { products: Product[] } = this.$f7.data
+    const productId = $f7route?.params.id;
+    let currentProduct: Product = {};
+    const { products = [] }: { products: Product[] } = this.$f7?.data
     products.forEach(function (product) {
       if (product.id === productId) {
         currentProduct = product;

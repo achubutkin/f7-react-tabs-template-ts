@@ -3,11 +3,11 @@ import {
   ListItem, F7ListItem
 } from 'framework7-react';
 
-import './styles.less'
+import './style.less'
 
 export default (props: F7ListItem.Props) => (
   <ListItem
     {...props}
-    className="catalog__item"
+    className="catalog-item"
   />
 )

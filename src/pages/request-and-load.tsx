@@ -5,7 +5,7 @@ export type User = {
   firstName?: string,
   lastName?: string,
   about?: string,
-  links?: Link[],
+  links: Link[],
 }
 
 export type Link = {
@@ -18,7 +18,7 @@ type Props = {
 }
 
 type State = {
-  user?: User,
+  user: User,
 }
 
 export default class extends React.Component<Props, State> {
@@ -26,7 +26,7 @@ export default class extends React.Component<Props, State> {
     super(props);
 
     const { $f7route } = this /* object f7route is also available in props */
-    const { user }: { user?: User } = $f7route.context
+    const { user = { links: [] } }: { user?: User } = $f7route?.context as any
 
     this.state = {
       user: user,

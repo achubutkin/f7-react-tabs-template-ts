@@ -10,8 +10,13 @@ import DynamicRoutePage from '../pages/dynamic-route';
 import RequestAndLoad, { User } from '../pages/request-and-load';
 import NotFoundPage from '../pages/404';
 import { Router } from 'framework7/modules/router/router';
+import Framework7 from 'framework7';
 
-const routes: Router.RouteParameters[] = [
+interface RouteParameters extends Router.RouteParameters {
+  app?: Framework7
+}
+
+const routes: RouteParameters[] = [
   {
     path: '/',
     component: HomePage,
@@ -48,10 +53,10 @@ const routes: Router.RouteParameters[] = [
       const router = this;
 
       // App instance
-      const app = router.app;
+      const { app } = router;
 
       // Show Preloader
-      app.preloader.show();
+      app?.preloader.show();
 
       // User ID from request
       const userId = routeTo.params.userId;
@@ -75,7 +80,7 @@ const routes: Router.RouteParameters[] = [
           ]
         };
         // Hide Preloader
-        app.preloader.hide();
+        app?.preloader.hide();
 
         // Resolve route to load page
         resolve(

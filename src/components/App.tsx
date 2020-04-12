@@ -1,5 +1,5 @@
 import React from 'react';
-import { Device }  from '../framework7-custom';
+import { Device } from '../framework7-custom';
 import {
   App,
   Panel,
@@ -26,9 +26,7 @@ import cordovaApp from '../cordova-app';
 import routes from '../routes';
 import { Framework7Params } from 'framework7/components/app/app-class';
 
-type Props = {
-
-}
+type Props = {}
 
 type State = {
   f7params?: Framework7Params,
@@ -96,30 +94,32 @@ export default class extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.$f7ready((f7) => {
-      // Init cordova APIs (see cordova-app.js)
-      if (Device.cordova) {
-        cordovaApp.init(f7);
-      }
-      // Call F7 APIs here
-    });
+    if (this.$f7ready) {
+      this.$f7ready((f7) => {
+        // Init cordova APIs (see cordova-app.js)
+        if (Device.cordova) {
+          cordovaApp.init(f7);
+        }
+        // Call F7 APIs here
+      });
+    }
   }
 
   alertLoginData() {
-    this.$f7.dialog.alert('Username: ' + this.state.username + '<br>Password: ' + this.state.password, () => {
-      this.$f7.loginScreen.close();
+    this.$f7?.dialog.alert('Username: ' + this.state.username + '<br>Password: ' + this.state.password, () => {
+      this.$f7?.loginScreen.close();
     });
   }
 
   render() {
     return (
-      <App params={ this.state.f7params } >
+      <App params={this.state.f7params} >
 
         {/* Left panel with cover effect*/}
         <Panel left cover themeDark>
           <View>
             <Page>
-              <Navbar title="Left Panel"/>
+              <Navbar title="Left Panel" />
               <Block>Left panel content goes here</Block>
             </Page>
           </View>
@@ -130,7 +130,7 @@ export default class extends React.Component<Props, State> {
         <Panel right reveal themeDark>
           <View>
             <Page>
-              <Navbar title="Right Panel"/>
+              <Navbar title="Right Panel" />
               <Block>Right panel content goes here</Block>
             </Page>
           </View>
@@ -184,14 +184,14 @@ export default class extends React.Component<Props, State> {
                   name="username"
                   placeholder="Your username"
                   value={this.state.username}
-                  onInput={(e) => this.setState({username: e.target.value})}
+                  onInput={(e) => this.setState({ username: e.target.value })}
                 ></ListInput>
                 <ListInput
                   type="password"
                   name="password"
                   placeholder="Your password"
                   value={this.state.password}
-                  onInput={(e) => this.setState({password: e.target.value})}
+                  onInput={(e) => this.setState({ password: e.target.value })}
                 ></ListInput>
               </List>
               <List>

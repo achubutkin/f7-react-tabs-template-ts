@@ -1,14 +1,12 @@
 import React from 'react';
 import { Page, Navbar, List, ListItem } from 'framework7-react';
 import { Product } from './product';
-import Catalog from '../components/Catalog';
+import { Catalog } from '../components/Catalog';
 
-type Props = {
-
-}
+type Props = {}
 
 type State = {
-  products?: Product[]
+  products: Product[]
 }
 
 export default class extends React.Component<Props, State> {
@@ -16,7 +14,7 @@ export default class extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      products: this.$f7.data.products,
+      products: this.$f7?.data.products || [],
     }
   }
   render() {
