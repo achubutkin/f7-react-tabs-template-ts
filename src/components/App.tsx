@@ -12,11 +12,9 @@ import {
   NavRight,
   Link,
   Block,
-  BlockTitle,
   LoginScreen,
   LoginScreenTitle,
   List,
-  ListItem,
   ListInput,
   ListButton,
   BlockFooter
@@ -24,7 +22,7 @@ import {
 
 import cordovaApp from '../cordova-app';
 import routes from '../routes';
-import { Framework7Params } from 'framework7/components/app/app-class';
+import Framework7, { Framework7Params } from 'framework7/components/app/app-class';
 
 type Props = {}
 
@@ -83,8 +81,13 @@ export default class extends React.Component<Props, State> {
         },
         // Cordova Statusbar settings
         statusbar: {
+          enabled: Framework7.device.ios && Framework7.device.webView,
           iosOverlaysWebView: true,
-          androidOverlaysWebView: false,
+          androidOverlaysWebView: true,
+          androidBackgroundColor: '#107bfe',
+          androidTextColor: 'white',
+          iosBackgroundColor: '#107bfe',
+          iosTextColor: 'white',
         },
       },
       // Login screen demo data

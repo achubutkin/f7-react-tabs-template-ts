@@ -27,7 +27,9 @@
     <allow-navigation href="*" />
 
     <platform name="android">
-      <preference name="StatusBarOverlaysWebView" value="false" />
+      <preference name="StatusBarOverlaysWebView" value="true" />
+      <preference name="StatusBarBackgroundColor" value="#107bfe" />
+      <preference name="StatusBarStyle" value="lightcontent" />
       <preference name="android-minSdkVersion" value="21" />
       <preference name="SplashMaintainAspectRatio" value="true" />
       <splash density="land-hdpi" src="res/screen/android/drawable-hdpi/screen.png" />
@@ -54,6 +56,7 @@
         <true />
       </config-file>
       <preference name="StatusBarOverlaysWebView" value="true" />
+      <preference name="StatusBarStyle" value="lightcontent" />
       <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
       <icon height="180" src="res/icon/ios/icon-60x60@3x.png" width="180" />
       <icon height="60" src="res/icon/ios/icon-60x60@1x.png" width="60" />
