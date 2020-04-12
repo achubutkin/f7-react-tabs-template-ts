@@ -7,7 +7,6 @@ import {
   NavTitleLarge,
   NavRight,
   Link,
-  Toolbar,
   Block,
   BlockTitle,
   List,

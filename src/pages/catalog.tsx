@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Navbar, List, ListItem } from 'framework7-react';
+import { Page, Navbar } from 'framework7-react';
 import { Product } from './product';
 import { Catalog } from '../components/Catalog';
 
