@@ -1,6 +1,6 @@
 # Framework7-React Tabs starter template + TypeScript
 
-Based on Tabs starter template created with [Framework7 Command-Line Interface (CLI)](https://framework7.io/cli/) and configured with [https://www.typescriptlang.org/](TypeScript).
+Based on Tabs starter template created with [Framework7 Command-Line Interface (CLI)](https://framework7.io/cli/) and configured for development using [https://www.typescriptlang.org/](TypeScript).
 
 ## NPM Scripts
 
