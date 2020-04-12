@@ -7,7 +7,7 @@ import './style.less'
 
 export default (props: F7ListItem.Props) => (
   <ListItem
-    {...props}
     className="catalog-item"
+    {...props}
   />
 )

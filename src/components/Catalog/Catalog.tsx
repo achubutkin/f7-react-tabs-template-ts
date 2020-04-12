@@ -12,7 +12,7 @@ type Props = Partial<F7List.Props> & {
 }
 
 export default (props: Props) => (
-  <List {...props} className="catalog">
+  <List className="catalog" {...props}>
     {props.products.map((product) => (
       <CatalogItem
         key={product.id}
