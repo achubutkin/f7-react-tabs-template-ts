@@ -97,15 +97,13 @@ export default class extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    if (this.$f7ready) {
-      this.$f7ready((f7) => {
-        // Init cordova APIs (see cordova-app.js)
-        if (Device.cordova) {
-          cordovaApp.init(f7);
-        }
-        // Call F7 APIs here
-      });
-    }
+    this.$f7ready!((f7) => {
+      // Init cordova APIs (see cordova-app.js)
+      if (Device.cordova) {
+        cordovaApp.init(f7);
+      }
+      // Call F7 APIs here
+    });
   }
 
   alertLoginData() {
