@@ -1,6 +1,4 @@
-
-import Framework7, { Device, Request, Utils } from 'framework7/framework7-lite.esm.js';
-import Appbar from 'framework7/components/appbar/appbar.js';
+import Framework7, { Device, Request, Utils } from 'framework7/framework7.esm.bundle.js';
 import Dialog from 'framework7/components/dialog/dialog.js';
 import Popup from 'framework7/components/popup/popup.js';
 import LoginScreen from 'framework7/components/login-screen/login-screen.js';
@@ -46,16 +44,10 @@ import Notification from 'framework7/components/notification/notification.js';
 import Autocomplete from 'framework7/components/autocomplete/autocomplete.js';
 import Tooltip from 'framework7/components/tooltip/tooltip.js';
 import Gauge from 'framework7/components/gauge/gauge.js';
-import Skeleton from 'framework7/components/skeleton/skeleton.js';
-import Menu from 'framework7/components/menu/menu.js';
-import ColorPicker from 'framework7/components/color-picker/color-picker.js';
-import Treeview from 'framework7/components/treeview/treeview.js';
-import TextEditor from 'framework7/components/text-editor/text-editor.js';
 import Elevation from 'framework7/components/elevation/elevation.js';
 import Typography from 'framework7/components/typography/typography.js';
 
 Framework7.use([
-  Appbar,
   Dialog,
   Popup,
   LoginScreen,
@@ -101,13 +93,8 @@ Framework7.use([
   Autocomplete,
   Tooltip,
   Gauge,
-  Skeleton,
-  Menu,
-  ColorPicker,
-  Treeview,
-  TextEditor,
   Elevation,
-  Typography
+  Typography,
 ]);
 
 export default Framework7;

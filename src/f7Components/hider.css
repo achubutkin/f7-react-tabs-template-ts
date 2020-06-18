@@ -1,0 +1,26 @@
+.title.hider {
+  opacity: 0;
+  /* transition: opacity 0.3s ease-out; */
+}
+
+.title.hider.visible {
+  opacity: 1;
+}
+
+.ios .block-title.hider {
+  text-overflow: ellipsis;
+  color: rgb(0, 0, 0);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 40px;
+  transition: transform 0.3s ease-out;
+  transition-property: transform, opacity;
+  transform-origin: right top;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.ios .block-title.hider.hide {
+  transform: scale(0.7);
+  opacity: 0;
+}

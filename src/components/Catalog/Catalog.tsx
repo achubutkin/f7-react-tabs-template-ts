@@ -3,9 +3,9 @@ import {
   List, F7List
 } from 'framework7-react';
 import { Product } from '../../pages/product';
+import { CatalogItem } from '.';
 
 import './style.less'
-import { CatalogItem } from '.';
 
 type Props = Partial<F7List.Props> & {
   products: Product[]

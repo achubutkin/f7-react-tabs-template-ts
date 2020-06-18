@@ -1,10 +1,11 @@
-
+import IntroPage from '../pages/intro';
 import HomePage from '../pages/home';
 import AboutPage from '../pages/about';
 import FormPage from '../pages/form';
 import CatalogPage from '../pages/catalog';
 import ProductPage from '../pages/product';
 import SettingsPage from '../pages/settings';
+import SelectCityPopup from '../pages/select-city';
 
 import DynamicRoutePage from '../pages/dynamic-route';
 import RequestAndLoad, { User } from '../pages/request-and-load';
@@ -13,12 +14,17 @@ import { Router } from 'framework7/modules/router/router';
 import Framework7 from 'framework7';
 
 interface RouteParameters extends Router.RouteParameters {
-  app?: Framework7
+  app?: Framework7,
+  component: any /* fix TS error */
 }
 
-const routes: RouteParameters[] = [
+const routes: RouteParameters[] | any[] /* fix TS error */ = [
   {
     path: '/',
+    component: IntroPage,
+  },
+  {
+    path: '/home/',
     component: HomePage,
   },
   {
@@ -40,6 +46,12 @@ const routes: RouteParameters[] = [
   {
     path: '/settings/',
     component: SettingsPage,
+  },
+  {
+    path: '/select-city/',
+    popup: {
+      component: SelectCityPopup
+    }
   },
 
   {

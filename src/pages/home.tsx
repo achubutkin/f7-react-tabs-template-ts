@@ -4,7 +4,6 @@ import {
   Navbar,
   NavLeft,
   NavTitle,
-  NavTitleLarge,
   NavRight,
   Link,
   Block,
@@ -19,28 +18,26 @@ import {
 export default () => (
   <Page name="home">
     {/* Top Navbar */}
-    <Navbar sliding={false} large>
+    <Navbar sliding={false}>
       <NavLeft>
-        <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="left" />
+        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="left" />
       </NavLeft>
       <NavTitle sliding>My App</NavTitle>
       <NavRight>
-        <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="right" />
+        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right" />
       </NavRight>
-      <NavTitleLarge>My App</NavTitleLarge>
     </Navbar>
 
     {/* Page content */}
     <Block strong>
       <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
-
       <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
     </Block>
 
     <BlockTitle>Navigation</BlockTitle>
     <List>
-      <ListItem link="/about/" title="About"/>
-      <ListItem link="/form/" title="Form"/>
+      <ListItem link="/about/" title="About" />
+      <ListItem link="/form/" title="Form" />
     </List>
 
     <BlockTitle>Modals</BlockTitle>

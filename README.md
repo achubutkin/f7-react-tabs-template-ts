@@ -1,5 +1,7 @@
 # Framework7-React Tabs starter template + TypeScript
 
+https://play.google.com/store/apps/details?id=com.ayon.birthy
+
 Based on Tabs starter template created with [Framework7 Command-Line Interface (CLI)](https://framework7.io/cli/) and configured for development using [TypeScript](https://www.typescriptlang.org/).
 
 ## NPM Scripts

@@ -12,12 +12,29 @@ import {
   Range,
   Block
 } from 'framework7-react';
+import LanguageSmartSelect from '../components/language-smart-select';
+import { WithTranslation, withTranslation } from 'react-i18next';
+import { compose } from 'redux';
+import NavTitle from '../components/nav-title';
+import moment from 'moment';
+import numeral from 'numeral';
 
-export default () => (
+type Props = WithTranslation
+
+const SettingsPage = ({ t }: Props) => (
   <Page name="settings">
-    <Navbar title="Settings" />
+    <Navbar backLink={t('Back').toString()} noHairline noShadow>
+      <NavTitle>{t('Settings')}</NavTitle>
+    </Navbar>
+    <BlockTitle>{t('Settings')}</BlockTitle>
 
-    <BlockTitle>Form Example</BlockTitle>
+    <LanguageSmartSelect />
+
+    <Block>
+      <p>{moment().format('LL')}</p>
+      <p>{numeral(1000).format('$0,0.00')}</p>
+    </Block>
+
     <List noHairlinesMd>
       <ListInput
         label="Name"
@@ -52,7 +69,7 @@ export default () => (
       <ListInput
         label="Gender"
         type="select"
-        >
+      >
         <option>Male</option>
         <option>Female</option>
       </ListInput>
@@ -117,12 +134,12 @@ export default () => (
         <Button className="col" small round fill>Small Round</Button>
       </Row>
       <Row tag="p">
-        <Button className="col" large raised>Large</Button>
-        <Button className="col" large fill raised>Large Fill</Button>
+        <Button className="col" big raised>big</Button>
+        <Button className="col" big fill raised>big Fill</Button>
       </Row>
       <Row tag="p">
-        <Button className="col" large fill raised color="red">Large Red</Button>
-        <Button className="col" large fill raised color="green">Large Green</Button>
+        <Button className="col" big fill raised color="red">big Red</Button>
+        <Button className="col" big fill raised color="green">big Green</Button>
       </Row>
     </Block>
 
@@ -171,3 +188,7 @@ export default () => (
     </List>
   </Page>
 );
+
+export default compose(
+  withTranslation()
+)(SettingsPage)
